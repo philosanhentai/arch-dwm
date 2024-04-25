@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 #####philo#####
+export PF_ASCII="kalilinux"
 pfetch
 figlet philo san
 #colorscript random
@@ -19,12 +20,14 @@ alias play="ffplay"
 alias vi="nvim"
 alias :x="exit"
 alias r="ranger"
+alias rr="fileio"
 alias p="cd /home/philosan/Dev/c++/ps/codeforces/indev"
 alias gra="cd /home/philosan/Dev/java/java_opengl_school"
 alias m1="sudo mount /dev/sda2 ~/Hdd"
 alias m2="sudo mount /dev/sda3 ~/HDD1"
 alias slp="slock & loginctl suspend"
 alias mon="sudo /usr/bin/mongod --quiet --config /etc/mongodb.conf"
+alias claer="clear"
 #####/philo#####
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '

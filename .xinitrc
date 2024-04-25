@@ -4,7 +4,7 @@ exec ~/.fehbg&
 exec xcompmgr& 
 exec xrdb -merge ~/.Xresources&
 /home/philosan/.bar&
-exec dwm 
+exec  dwm 
 #exec pwm 
 #exec awesome
 ##########
