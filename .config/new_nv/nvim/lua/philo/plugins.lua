@@ -44,7 +44,6 @@ local plugins = {
    "lukas-reineke/indent-blankline.nvim",
    {"mbbill/undotree", cmd = "UndotreeToggle"},
    "glepnir/dashboard-nvim",
-   {"dstein64/vim-startuptime"},
    "lewis6991/impatient.nvim",
    {
 	"norcalli/nvim-colorizer.lua",
@@ -125,13 +124,6 @@ local plugins = {
   --
     -- Treesitter
   "nvim-treesitter/nvim-treesitter" ,
-  "p00f/nvim-ts-rainbow" , 
-  {
-	"AndrewRadev/tagalong.vim",
-	dependencies = {"othree/html5.vim","tpope/vim-surround"},
-	ft="html",
-  },
-  --use "nvim-treesitter/playground"
   -- snippets
 
 
@@ -149,7 +141,6 @@ local plugins = {
  }, -- simple to use language server installer
  
  "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
- 'jose-elias-alvarez/null-ls.nvim', -- LSP diagnostics and code actions
  "williamboman/nvim-lsp-installer", -- simple to use language server installer
 
   
@@ -161,7 +152,25 @@ local plugins = {
    dependencies = {'nvim-telescope/telescope-media-files.nvim'},
    cmd = "Telescope",
    },
-  	
+   { 'wakatime/vim-wakatime', lazy = false }, -- for coding time calculations 
+   {
+    "stevearc/conform.nvim", -- formating an linting 
+	 config = function()
+   	  require("philo.lsp.conform").setup()
+   	end,
+    event = {
+      "BufReadPre",
+      "BufNewFile",
+    },
+   },
+   {
+    "kylechui/nvim-surround", -- ysiw
+    config = function()
+   	  require("nvim-surround").setup({})
+   	end,
+    event = "InsertEnter" 
+    },
 }
+
 -- Example using a list of specs with the default options
 require("lazy").setup(plugins)
