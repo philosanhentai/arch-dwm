@@ -5,4 +5,4 @@ end
 
 require "philo.lsp.mason"
 require("philo.lsp.handlers").setup()
-require "philo.lsp.null-ls"
+require "philo.lsp.conform"

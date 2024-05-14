@@ -50,7 +50,8 @@ hide = {
     })
 require("ibl").setup{
 	--filetype_exclude = {"dashboard"},
-	exclude = { filetypes = {"dashboard"} }
+	exclude = { filetypes = {"dashboard"} },
+    indent = {  char = "|" },
 }
 local status_ok, impatient = pcall(require, "impatient")
 if not status_ok then

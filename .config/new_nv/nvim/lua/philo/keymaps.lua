@@ -27,24 +27,20 @@ vim.keymap.set('n', "<leader>u", vim.cmd.UndotreeToggle)
 -- Close tab key mapping in bufferline
 keymap('n', '<leader><Esc>', ':bd<CR>', { noremap = true, silent = true })
 -- telescope functions
-keymap( "n", "gd", ":Telescope lsp_definitions<cr>", opts)--works
-keymap( "n", "gD", ":lua vim.lsp.buf.declaration()<cr>", opts)--works
-keymap( "n", "gi", ":lua  vim.lsp.buf.implementation()<cr>", opts)
-keymap( "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-keymap( "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-keymap( "n", "<leader>gf", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)--works
-keymap( "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)--works
-keymap( "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-keymap(
-    "n",
-    "gl",
-    '<cmd>lua vim.diagnostic.open_float()<CR>',
-    opts
-  )--works
-  keymap( "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-  keymap( "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
-keymap('n', '<leader>i', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+keymap( "n", "<leader>md" , ":Telescope lsp_definitions<cr>" ,  opts)--works
+keymap( "n", "<leader>mD", ":lua vim.lsp.buf.declaration()<cr>", opts)--works
+keymap( "n", "<leader>mi", ":lua  vim.lsp.buf.implementation()<cr>", opts)
+keymap( "n", "<leader>mrr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap( "n", "<leader>ma", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+keymap( "n", "<leader>mf", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)--works
+keymap( "n", "<leader>mrn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)--works
+keymap( "n", "<leader>m[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+keymap( "n", "<leader>ml",'<cmd>lua vim.diagnostic.open_float()<CR>',opts)--works
+keymap( "n", "<leader>m]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+keymap( "n", "<leader>mq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+keymap( "n", "<leader>ms", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+keymap('n', '<leader>mi', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 -- pasting without yanking
 keymap ("x" , "<leader>p", "\"_dP", opts)
 -- navigation
