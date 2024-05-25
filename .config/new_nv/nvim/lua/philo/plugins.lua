@@ -109,6 +109,12 @@ local plugins = {
   	  "hrsh7th/cmp-buffer", 
 	  "L3MON4D3/LuaSnip" ,--snippet engine
   	  "rafamadriz/friendly-snippets" ,-- a bunch of snippets to use
+	  { "Exafunction/codeium.nvim",  
+	     -- you need codeium Auth for this to work
+	     config = function()
+		require("codeium").setup({})
+	    end,
+	  }, 
 	},
   },
 
@@ -152,7 +158,7 @@ local plugins = {
    dependencies = {'nvim-telescope/telescope-media-files.nvim'},
    cmd = "Telescope",
    },
-   { 'wakatime/vim-wakatime', lazy = false }, -- for coding time calculations 
+   { 'wakatime/vim-wakatime', lazy = false }, -- for coding time calculations and you need api key
    {
     "stevearc/conform.nvim", -- formating an linting 
 	 config = function()
