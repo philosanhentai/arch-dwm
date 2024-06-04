@@ -108,12 +108,14 @@ cmp.setup {
         buffer = "[Buffer]",
         path = "[Path]",
         codeium = "[Codeium]",
+        copilot = "[Copilot]",
       })[entry.source.name]
       return vim_item
     end,
   },
   sources = {
     {name = 'nvim_lsp'},
+    {name = 'copilot'},
     { name = "codeium" },
     { name = "luasnip" },
     { name = "buffer" },

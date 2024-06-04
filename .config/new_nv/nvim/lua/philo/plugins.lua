@@ -115,6 +115,19 @@ local plugins = {
 		require("codeium").setup({})
 	    end,
 	  }, 
+	{
+	"zbirenbaum/copilot.lua",
+	     -- you need Copilot Auth for this to work
+	     config = function()
+     		require("philo.copilot").setup()
+	    end,
+	  }, 
+	{
+	  "zbirenbaum/copilot-cmp",
+	  config = function ()
+	    require("copilot_cmp").setup()
+	  end
+	},
 	},
   },
 
@@ -148,7 +161,6 @@ local plugins = {
  
  "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
  "williamboman/nvim-lsp-installer", -- simple to use language server installer
-
   
   -- Telescope
    {"nvim-telescope/telescope.nvim",
