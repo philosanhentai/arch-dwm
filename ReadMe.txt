@@ -115,3 +115,5 @@ tlp.conf goes to /etc/tlp.conf
 
 a good font JetBrainsMonoNl Nerd Font Mono
 
+good recomendations 
+https://wiki.gentoo.org/wiki/Suspend_and_hibernate
