@@ -27,7 +27,11 @@ alias m1="sudo mount /dev/sda2 ~/Hdd"
 alias slp="slock & loginctl suspend"
 alias mon="sudo /usr/bin/mongod --quiet --config /etc/mongodb.conf"
 alias claer="clear"
+## fzf stuff 
 alias his='$(cat .bash_history | fzf)'
+alias fvi='nvim $(fzf  -m --preview "cat") '
+alias fcd='cd $(find . -type d | fzf)'
+alias kzf="ps -ef | fzf | awk '{print \$2}' | xargs kill -9"
 #####/philo#####
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
