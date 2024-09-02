@@ -24,12 +24,12 @@ alias rr="fileio"
 alias p="cd /home/philosan/Dev/c++/ps/codeforces/indev"
 alias gra="cd /home/philosan/Dev/java/java_opengl_school"
 alias m1="sudo mount /dev/sda2 ~/Hdd"
-alias slp="slock & loginctl suspend"
+alias slp="slock & sudo loginctl suspend"
 alias mon="sudo /usr/bin/mongod --quiet --config /etc/mongodb.conf"
 alias claer="clear"
 ## fzf stuff 
 alias his='$(cat .bash_history | fzf)'
-alias fvi='nvim $(fzf  -m --preview "cat") '
+alias fvi='nvim $(fzf   --preview "cat {}" -m) '
 alias fcd='cd $(find . -type d | fzf)'
 alias kzf="ps -ef | fzf | awk '{print \$2}' | xargs kill -9"
 #####/philo#####
