@@ -15,7 +15,7 @@ alias s=" cd ~/st"
 alias c=" cd ~/Dev/c++/"
 alias t=" cd ~/Dev/c++/text_editor/"
 alias n=" cd ~/.config/nvim/lua/philo/"
-alias record="ffmpeg -video_size 1360x768 -framerate 30 -f x11grab -i :0.0+0,0 -c:v libx264rgb -crf 0 -preset ultrafast"
+alias record="ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+0,0 -f alsa -ac 2 -i pulse -acodec aac -strict experimental"
 alias play="ffplay"
 alias vi="nvim"
 alias :x="exit"
@@ -28,9 +28,9 @@ alias slp="slock & sudo loginctl suspend"
 alias mon="sudo /usr/bin/mongod --quiet --config /etc/mongodb.conf"
 alias claer="clear"
 ## fzf stuff 
-alias his='$(cat .bash_history | fzf)'
+alias his='$(cat ~/.bash_history | fzf)'
 alias fvi='nvim $(fzf   --preview "cat {}" -m) '
-alias fcd='cd $(find . -type d | fzf)'
+alias fcd='cd $(find . -type d | fzf --preview "ls {}")'
 alias kzf="ps -ef | fzf | awk '{print \$2}' | xargs kill -9"
 #####/philo#####
 alias ls='ls --color=auto'

@@ -1,5 +1,5 @@
 local M = {}
-local servers = {'clangd','pylsp','html','cssls','jdtls','tsserver','rust_analyzer'}
+local servers = {'clangd','pylsp','html','cssls','jdtls','ts_ls','rust_analyzer'}
 -- TODO: backfill this to template
 M.setup = function()
   local signs = {
@@ -86,7 +86,7 @@ require'lspconfig'.rust_analyzer.setup{  assist = {
             },
         }
 require'lspconfig'.pylsp.setup{}
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.jdtls.setup{} -- you should use atleast version 17 of jdk and install jdtls throw yay
 require'lspconfig'.html.setup{
     on_attach = on_attach,
@@ -128,7 +128,7 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
+  if client.name == "ts_ls" then
     client.server_capabilities.documentFormattingProvider = false
   end
   lsp_keymaps(bufnr)
